@@ -1,0 +1,97 @@
+#Home {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  overflow: hidden;
+  text-align: center;
+}
+
+#Home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("src/images/Home1.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: blur(6px);
+  z-index: 0;
+}
+
+#Home h1,
+#Home h3,
+#Home button {
+  position: relative;
+  z-index: 1;
+  margin: 10px 0;
+}
+
+#Home h1 {
+  font-size: 40px;
+  padding-top: 100px;
+}
+
+#Home h3 {
+  font-size: 20px;
+}
+
+#Home button {
+  border-radius: 10px;
+  color: aliceblue;
+  background-color: black;
+  margin: 20px;
+  padding: 10px 20px;
+  font-family: sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 10px grey;
+}
+
+#Home button:active {
+  transform: scale(0.9);
+  box-shadow: 0 12px 25px rgb(255, 255, 255);
+}
+
+/* ------------------ Responsive ------------------ */
+
+@media (max-width: 768px) {
+  #Home h1 {
+    font-size: 30px;
+    padding-top: 80px;
+  }
+
+  #Home h3 {
+    font-size: 18px;
+  }
+
+  #Home button {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  #Home h1 {
+    font-size: 24px;
+    padding-top: 60px;
+  }
+
+  #Home h3 {
+    font-size: 16px;
+  }
+
+  #Home button {
+    font-size: 16px;
+    padding: 6px 14px;
+  }
+}

@@ -1,0 +1,195 @@
+#TopVenues {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  overflow: hidden;
+  color: #000000;
+  margin-top: 50px;
+
+}
+
+#TopVenues::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("src/images/top_venues.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: blur(6px);
+  z-index: 0;
+}
+
+.slider-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+  width: 80%;
+  z-index: 1;
+  scrollbar-width: none;            /* Firefox */
+  -ms-overflow-style: none;         /* IE/Edge */
+}
+
+.slider-container::-webkit-scrollbar {
+  display: none;                    /* Chrome, Safari, Opera */
+}
+
+.card-wrapper {
+  width: 260px;
+  height: 500px;
+  perspective: 1000px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  transform-origin: center;
+}
+
+.card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.card {
+  position: absolute;
+  width: 95%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  padding: 10px;
+  text-align: center;
+  background-color: white;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.card.front {
+  z-index: 2;
+}
+
+.card.back {
+  transform: rotateY(180deg);
+  z-index: 1;
+  list-style: none;
+}
+
+.card img {
+  width: 100%;
+  height: 52%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 15px;
+  transform: scale(1.05);
+  transition: transform 0.6s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.card.front::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: calc(100% - 20px);
+  height: 50%;
+  border-radius: 15px;
+  transition: background 0.6s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.card:hover img {
+  transform: scale(1);
+}
+
+.card:hover::after {
+  background: rgba(93, 91, 91, 0.3);
+}
+
+.card h1,
+.card h2 {
+  font-size: 20px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.card h5 {
+  font-size: 20px;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.card button {
+  font-size: 12px;
+  padding: 5px 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+#btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#services {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+#add {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.arrow {
+  font-size: 24px;
+  background: rgba(19, 17, 17, 0.7);
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin: 0 10px;
+  align-self: center;
+  transition: background 0.3s;
+}
+
+.arrow:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.arrow.left {
+  position: absolute;
+  left: 10px;
+}
+
+.arrow.right {
+  position: absolute;
+  right: 10px;
+}
+.card.back h2 li{
+  list-style: none;
+  padding-right: 35px;
+}
