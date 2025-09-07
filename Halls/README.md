@@ -56,9 +56,6 @@ Hallbookz is a web application designed to streamline the booking and management
    # or
    yarn install
    ```
-   ```bash
-   npm install react-router-dom
-   ```
 
 3. **Start the development server:**
    ```bash
