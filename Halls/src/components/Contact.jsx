@@ -25,8 +25,8 @@ const Contact = () => {
                 </div>
                 <div className="contact_info">
                     <h3>Contact Information</h3>
-                    <p><i className="fas fa-phone"></i> +91 6381854969</p>
-                    <p><i className="fas fa-envelope"></i> skarunachalam31@gmail.com</p>
+                    <p><i className="fas fa-phone"></i> +91 9876543210</p>
+                    <p><i className="fas fa-envelope"></i> ska31@gmail.com</p>
                     <p><i className="fas fa-map-marker-alt"></i> 123 abc Street,City</p><br/>                
                     <h3>Follow Us</h3>
                     <h4><i className="fab fa-instagram"></i> Instagram</h4>
