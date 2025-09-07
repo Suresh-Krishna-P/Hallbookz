@@ -63,7 +63,16 @@ const Book = () => {
                     <li>Parking</li>
                   </ul>
                 </div>
-                <center><Link to="/Payment"><button className="now">Book Now</button></Link>
+                <center><Link 
+    to="/Payment" 
+    state={{ 
+      hallName: venue.name, 
+      location: venue.city, 
+      fullDayAmount: venue.price,
+      selectedDate
+    }}
+  >
+    <button className="now">Book Now</button></Link>
                 <a href="https://www.google.co.in/maps/place/Liam+Banquet+Halls+-+Singanallur/@11.003987,76.9688966,12z/data=!4m10!1m2!2m1!1shalls!3m6!1s0x3ba8575b6a1d3343:0x39f964d146d25579!8m2!3d11.0031219!4d77.0282439!15sCgVoYWxsc1oHIgVoYWxsc5IBDGJhbnF1ZXRfaGFsbKoBQwoJL20vMDhzYjl3EAEqCSIFaGFsbHMoADIeEAEiGme4U0iq7J8p4T4K7yqsai00W-UTjcVusD8IMgkQAiIFaGFsbHPgAQA!16s%2Fg%2F11sgv5kvw0?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D"><button className="map">View Map</button></a></center>
               </div>
             ))
