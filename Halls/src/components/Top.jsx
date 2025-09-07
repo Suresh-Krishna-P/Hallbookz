@@ -3,7 +3,6 @@ import '/src/Css/Top.css';
 import NavBar from './NavBar';
 import { Link } from 'react-router-dom';
 
-
 function TopVenues() {
   const [flipped, setFlipped] = useState('');
   const sliderRef = useRef(null);
@@ -17,14 +16,7 @@ function TopVenues() {
     { city: "Dindugal", name: "Raj Party Halls", price: 50000, image: "src/images/book4.jpeg", availability: "Available", datesUnavailable: ["2025-07-14", "2025-07-17"] },
     { city: "Salem", name: "Desotta Hotel", price: 90000, image: "src/images/book5.jpeg", availability: "Available", datesUnavailable: [] },
     { city: "Tuticorin", name: "Hotel Meridian", price: 100000, image: "src/images/book6.jpeg", availability: "Available", datesUnavailable: ["2025-07-15"] },
-    { city: "Chennai", name: "Hotel Phoenix", price: 75000, image: "src/images/book1.jpeg", availability: "Available", datesUnavailable: [] },
-    { city: "Ooty", name: "Chill Station Resort", price: 70000, image: "src/images/book2.jpeg", availability: "Available", datesUnavailable: ["2025-07-15", "2025-07-16"] },
-    { city: "Madurai", name: "Classic Halls", price: 60000, image: "src/images/book3.jpeg", availability: "Available", datesUnavailable: [] },
-    { city: "Dindugal", name: "Raj Party Halls", price: 50000, image: "src/images/book4.jpeg", availability: "Available", datesUnavailable: ["2025-07-14", "2025-07-17"] },
-    { city: "Salem", name: "Desotta Hotel", price: 90000, image: "src/images/book5.jpeg", availability: "Available", datesUnavailable: [] },
-    { city: "Tuticorin", name: "Hotel Meridian", price: 90000, image: "src/images/book6.jpeg", availability: "Available", datesUnavailable: ["2025-07-15"] },    
   ];
-
 
   const startAutoPlay = () => {
     intervalRef.current = setInterval(() => {
@@ -78,6 +70,7 @@ function TopVenues() {
     updated[index] = !updated[index];
     setFlipped(updated);
   };
+
   useEffect(() => {
     startAutoPlay();
 
@@ -105,7 +98,18 @@ function TopVenues() {
                   <h5>{venue.availability}</h5>
                   <div id="btn-container">
                     <button id="services" onClick={() => handleFlip(index)}>Services</button>
-                    <Link to="/Payment"><button id="add">Book Now</button></Link>
+                    
+                    {/* ✅ Book Now button passes hall info to Payment */}
+                    <Link 
+                      to="/Payment" 
+                      state={{ 
+                        hallName: venue.name, 
+                        location: venue.city, 
+                        fullDayAmount: venue.price,  // full-day price from venue
+                      }}
+                    >
+                      <button id="add">Book Now</button>
+                    </Link>
                   </div>
                 </div>
                 <div className="card back">
